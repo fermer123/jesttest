@@ -1,5 +1,5 @@
-// import { useEffect, useState } from 'react';
-// import Users from './users/Users';
+import { useEffect, useState } from 'react';
+import Users from './users/Users';
 
 import { Link, Route, Routes } from 'react-router-dom';
 import AboutPage from './pages/AboutPage';
@@ -9,8 +9,12 @@ import MainPage from './pages/MainPage';
 //   const [data, setData] = useState(null);
 //   const [toggle, setToggle] = useState(false);
 //   const [value, setValue] = useState('');
-
+//   const [valueMy, setValueMy] = useState('');
 //   const onClick = () => setToggle(!toggle);
+
+//   const myInp = (e) => {
+//     setValueMy(e.target.value);
+//   };
 
 //   useEffect(() => {
 //     setTimeout(() => {
@@ -20,8 +24,10 @@ import MainPage from './pages/MainPage';
 //   return (
 //     <div className='App'>
 //       <h1 data-testid='value-elem'>{value}</h1>
+//       <h2 data-testid='valueMy-elem'>{valueMy}</h2>
 //       {data && <div style={{ color: 'red' }}>{data}</div>}
 //       {toggle && <div data-testid='toggle-elem'>!--toggle--!</div>}
+
 //       <h1>hello world</h1>
 //       <button data-testid='toggle-btn' onClick={onClick}>
 //         click me
@@ -30,6 +36,7 @@ import MainPage from './pages/MainPage';
 //         onChange={(e) => setValue(e.target.value)}
 //         placeholder='input value'
 //       />
+//       <input placeholder='myvalue' onChange={myInp} />
 //       <Users />
 //     </div>
 //   );

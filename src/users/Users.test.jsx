@@ -5,7 +5,7 @@ import Users from './users';
 jest.mock('axios');
 describe('Users test', () => {
   let response;
-  beforeEach(() => {
+  beforeAll(() => {
     response = {
       data: [
         {
@@ -19,13 +19,12 @@ describe('Users test', () => {
       ],
     };
   });
-  'render users',
-    async () => {
-      axios.get.mockReturnValue(response);
-      render(<Users />);
-      const users = await screen.findAllByTestId('user-item');
-      expect(users.length).toBe(2);
-      expect(axios.get).toBeCalledTimes(1);
-      screen.debug();
-    };
+  test('async', async () => {
+    axios.get.mockReturnValue(response);
+    render(<Users />);
+    const users = await screen.findAllByTestId('user-item');
+    expect(users.length).toBe(2);
+    expect(axios.get).toBeCalledTimes(1);
+    screen.debug();
+  });
 });

@@ -4,13 +4,12 @@ import { useEffect, useState } from 'react';
 const Users = () => {
   const [users, setUsers] = useState([]);
 
+  const fetchData = async () => {
+    const resp = await axios.get('https://jsonplaceholder.typicode.com/users');
+    setUsers(resp.data);
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      const resp = await axios.get(
-        'https://jsonplaceholder.typicode.com/users',
-      );
-      setUsers(resp.data);
-    };
     fetchData();
   }, []);
 
