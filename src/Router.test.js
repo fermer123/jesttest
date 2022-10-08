@@ -1,5 +1,14 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import App from './App';
 
-describe('router', () => {
-  it('routers', () => {});
+describe('rout', () => {
+  test('routs', () => {
+    render(<App />);
+    const mainlink = screen.getByTestId('main-link');
+    const aboutlink = screen.getByTestId('about-link');
+    expect(screen.getByTestId('main-link'));
+    userEvent.click(aboutlink);
+    expect(screen.getByTestId('about-link'));
+  });
 });
