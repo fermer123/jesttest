@@ -46,24 +46,18 @@ import MainPage from './pages/MainPage';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div style={{ marginLeft: '50px' }}>
-        <Routes>
-          <Route path='/' element={<MainPage />} />
-          <Route path='/about' element={<AboutPage />} />
-        </Routes>
-        <Link to='/' data-testid='main-link'>
-          main
-        </Link>
-        <Link
-          style={{ marginLeft: '50px' }}
-          to='/about'
-          data-testid='about-link'
-        >
-          about
-        </Link>
-      </div>
-    </BrowserRouter>
+    <div style={{ marginLeft: '50px' }}>
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/about' element={<AboutPage />} />
+      </Routes>
+      <Link to='/' data-testid='main-link'>
+        main
+      </Link>
+      <Link style={{ marginLeft: '50px' }} to='/about' data-testid='about-link'>
+        about
+      </Link>
+    </div>
   );
 };
 
